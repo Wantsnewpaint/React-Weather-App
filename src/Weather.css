@@ -10,8 +10,20 @@
   .header {
     padding-bottom: 40px;
   }
-  .mainTemp strong {
+  .weatherImage {
+    float: left;
+    margin-right: 10px;
+}
+  .mainTemp .displayTemp {
     font-size: 52px;
     font-weight: 500;
-    margin-right: 10px;
+    margin-right: 8px;
+    line-height: 64px;
+  }
+  .mainTemp .units {
+      position: relative;
+      top: -25px;
+  }
+  .information li {
+    list-style: none;
   }

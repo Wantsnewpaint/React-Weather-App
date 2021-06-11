@@ -7,9 +7,13 @@ export default function Weather() {
     <div className="Weather">
         <div className="header">
         <div className="search-bar">
-            <form className="Search-form">
+            <form className="Search-form row">
+                <div className="col-9">
             <input type="search" placeholder="Enter a city" className="form-control search-input" autocomplete="off" />
-            <input type="submit" class="btn btn-primary w-100" value="Search"></input>
+            </div>
+            <div className="col-3">
+            <input type="submit" className="btn btn-primary w-100" value="Search"></input>
+            </div>
             </form>
         </div>
         </div>
@@ -18,15 +22,17 @@ export default function Weather() {
     <div className="information">
         <div className="row">
           <h1 className="mainCity">Montevideo</h1>
-        
-          <div className="mainTemp col-6"><strong>12</strong>
+          <div className="mainTemp col-6">
+              <div className="clearfix">
+          <img src ="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly-cloudy" className="weatherImage" /> {" "}
+              <span className="displayTemp">12</span>
             <span className="units">°C</span>
-            <img src ="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly-cloudy" />
+            </div>
             </div>
  
             <div className="col-6">
             <ul>
-              <b><li>Friday June 11, 2021 at 9:50 AM</li></b>
+              <b><li>Friday June 11 at 9:50 AM</li></b>
               <li>Partly Cloudy</li>
               <li>Today's High: <strong>12</strong>°</li>
               <li>Humidity: <strong>55</strong>%</li>
