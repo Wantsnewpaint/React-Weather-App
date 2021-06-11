@@ -21,7 +21,7 @@ export default function Weather() {
         
           <div className="mainTemp col-6"><strong>12</strong>
             <span className="units">°C</span>
-            <img src ="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" id="weatherImage" alt="partly-cloudy" />
+            <img src ="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly-cloudy" />
             </div>
  
             <div className="col-6">
@@ -37,6 +37,9 @@ export default function Weather() {
     </div>
 
 </div>
+<footer><small>
+        <a href="https://github.com/Wantsnewpaint/React-Weather-App" target="_blank" rel="noreferrer">Open-source code</a> by Bridget Young
+        </small></footer>
     </div>
     )
 }
