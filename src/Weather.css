@@ -1,0 +1,17 @@
+.wrapper {
+    max-width: 600px;
+    margin: 40px auto;
+    display: block;
+  }
+.Weather {
+    padding: 30px 40px 30px 40px;
+    border: 1px solid rgba(34, 33, 33, 1);
+  }
+  .header {
+    padding-bottom: 40px;
+  }
+  .mainTemp strong {
+    font-size: 52px;
+    font-weight: 500;
+    margin-right: 10px;
+  }
