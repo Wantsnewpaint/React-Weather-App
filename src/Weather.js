@@ -3,22 +3,22 @@ import axios from "axios";
 import "./Weather.css";
 
 export default function Weather() {
-    const [ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+    const [weatherData, setWeatherData] = useState({ ready: false });
     function handleResponse(response){
-        console.log(response.data);
         setWeatherData({
+            ready:true,
             temperature: response.data.main.temp,
             city: response.data.name,
+            weatherImage: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+            date: "Monday 14:28",
             description: response.data.weather[0].description,
             tempMax: response.data.main.temp_max,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
         })
         
-        setReady(true);
     }
-    if (ready) {
+    if (weatherData.ready) {
         return(
             <div className="wrapper">
         <div className="Weather">
@@ -41,7 +41,7 @@ export default function Weather() {
               <h1 className="mainCity">{weatherData.city}</h1>
               <div className="mainTemp col-6">
                   <div className="clearfix">
-              <img src ="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly-cloudy" className="weatherImage" /> {" "}
+              <img src ={weatherData.weatherImage} alt={weatherData.description} className="weatherImage" /> {" "}
                   <span className="displayTemp">{Math.round(weatherData.temperature)}</span>
                 <span className="units">°C</span>
                 </div>
@@ -49,8 +49,8 @@ export default function Weather() {
      
                 <div className="col-6">
                 <ul>
-                  <b><li>Friday June 11 at 9:50 AM</li></b>
-                  <li>{weatherData.description}</li>
+                  <b><li>{weatherData.date}</li></b>
+                  <li className="text-capitalize">{weatherData.description}</li>
                   <li>Today's High: <strong>{Math.round(weatherData.tempMax)}</strong>°</li>
                   <li>Humidity: <strong>{weatherData.humidity}</strong>%</li>
                   <li>Wind Speed: <strong>{weatherData.wind}</strong> km/h</li>
